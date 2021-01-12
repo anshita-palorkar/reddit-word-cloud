@@ -2,7 +2,6 @@ import praw
 from praw.models import MoreComments
 import matplotlib.pyplot as plt
 from wordcloud import WordCloud, STOPWORDS
-import contractions as cts
 
 url = str(input("Enter URL of Reddit thread:\n"))
 
@@ -30,7 +29,6 @@ text = (" ").join(comment_list)
 
 #cleaning collected text
 text.lower()
-cts.fix(text)
 punct = '-?!.,><~_=+*&^%$#@`""/;:[(){}\\]'
 for char in punct:
     if char in text:
